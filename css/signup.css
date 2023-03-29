@@ -1,0 +1,138 @@
+*
+{
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+body
+{
+    margin: 0%;
+    padding: 0%;
+    background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-yellow-geometric-flattened-taobao-e-commerce-coupon-background-picture-image_1076077.jpg")
+}
+a{
+    text-decoration: none;
+}
+a:hover
+{
+    color: #1554e6;
+    text-decoration: underline;
+}
+#logo {
+    display: block;
+    width: 10rem;
+    height:10rem;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    margin: auto;
+    padding: 0%;
+}
+.top>p
+{
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    font-size: 30px;
+}
+.top
+{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: block;
+    text-align: center;
+    width: 350px;
+    margin: auto;
+    padding-top:3px ;
+    padding-bottom:20px;
+    border-radius: 7px;
+    border: 1px solid #cac7c7;
+    background: linear-gradient(to right,#f1c869,#c1c4f6);
+    /* background: rgb(250, 215, 149); */
+    /* padding: 40px; */
+}
+label
+{
+    font-weight: 600;
+    text-align:left;
+     display: block;
+     padding-left: 25px;
+     margin-block-start: 1em;
+     margin-inline-start: 0px; 
+    margin-inline-end: 0px; 
+}
+input
+{
+    width: 18.5rem;
+    border: 0.1rem solid #949494;
+    height: 2.0rem;
+    outline: none;
+    padding: 0.2rem;
+    font-size: 0.85rem;
+    border-radius: 0.2rem;
+}
+button
+{
+    border: 0px;
+ color: white;
+ display: block;
+ margin: auto;
+  width: 12rem;
+  padding: .6rem;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom,#661bb1,#7f83bb);
+}
+button:hover
+
+{
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+    background: linear-gradient(to bottom,#ffd77a,#fdb602);
+}
+#span
+{
+    text-align: left;
+    width: 18.5rem;
+    margin: auto;
+    padding-bottom: 10px;
+}
+hr
+{
+    margin-top: 20px;
+    width: 350px;
+}
+.bottom
+{
+    text-align: center;
+    margin-top: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.bottom>button
+{
+    width: 350px;
+}
+ .bottom >span
+{
+    background-color: white;
+    color: #949494;
+}
+#hrbottom
+{
+   width: auto;
+   color: rgb(94, 91, 91);
+   border: 1px solid;
+}
+#second
+{
+    display: flex;
+    width: 18.5rem;
+    margin: auto;
+    justify-content: space-around;
+}
+#p
+{
+    text-align: center;
+}
+#span
+{
+    font-size: small;
+}
