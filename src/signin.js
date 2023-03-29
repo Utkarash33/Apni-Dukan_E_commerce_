@@ -36,6 +36,9 @@ btn.addEventListener("click",function()
                      if(LSdata[j].password == password.value)
                      {
                        alert("Sign in Successfully")
+                       localStorage.setItem("User",JSON.stringify(LSdata[j]))
+
+                       window.location.href ="./home.html"
                      }
                      else
                      {
