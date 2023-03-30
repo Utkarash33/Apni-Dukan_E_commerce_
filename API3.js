@@ -1,0 +1,12 @@
+[{"id":19,"category":"mobiles","title":"SAMSUMG S20 FE 5G","price":247.95,"image":"./imgs/products/41ezRvTwcaL._MCnd_AC_.jpg","rating":{"rate":4.5,"count":146}},
+{"id":20,"category":"mobiles","title":"REDMI NOTE 12 5G","price":312.99,"image":"./imgs/products/41lUzcNHs3L._MCnd_AC_.jpg","rating":{"rate":3.6,"count":145}},
+{"id":21,"category":"mobiles","title":"IQOO NEO 6 5G ","price":222.99,"image":"./imgs/products/51DLLa8HNWL._MCnd_AC_.jpg","rating":{"rate":4.2,"count":145}},
+{"id":22,"category":"mobiles","title":"TECNO POP 7 PRO","price":414.99,"image":"./imgs/products/410i+wm9cDL._MCnd_AC_.jpg","rating":{"rate":4.1,"count":145}},
+{"id":1,"title":"POCO M2 RELOADED","price":309.95,"image":"./imgs/products/31G26FrlCxS._AC_UL160_SR160,160_.jpg","category":"mobiles","rating":{"rate":4.5,"count":120}},
+{"id":2,"title":"SAMSUNG M33 5G","price":422.3,"image":"./imgs/products/419KF2t1nML._MCnd_AC_.jpg","category":"mobiles","rating":{"rate":4.1,"count":259}},
+{"id":3,"title":"Mens Cotton Jacket","price":255.99,"image":"./imgs/products/411VEGTiIdL._AC_UL160_SR160,160_.jpg","category":"mobiles","rating":{"rate":4.7,"count":500}},
+{"id":4,"title":"Redmi Note 11S","price":315.99,"image":"./imgs/products/71T-z0twRpL._AC_SY200_.jpg","category":"mobiles","rating":{"rate":2.1,"count":430}},
+{"id":15,"category":"mobiles","title":"OPPO A78 5G","price":456.99,"image":"./imgs/products/8104evx11QL._AC_SY200_.jpg","rating":{"rate":2.6,"count":235}},
+{"id":16,"category":"mobiles","title":"POCO M5 Pro","price":329.95,"image":"./imgs/products/411VEGTiIdL._AC_UL160_SR160,160_.jpg ","rating":{"rate":2.9,"count":340}},
+{"id":17,"category":"mobiles","title":"REDMI 10 POWER","price":239.99,"image":"./imgs/products/81eM15lVcJL._AC_SY200_.jpg","rating":{"rate":3.8,"count":679}},
+{"id":18,"category":"mobiles","title":"POCO M2 PRO","price":199.85,"image":"./imgs/products/81w3UsCHEtL._AC_UL160_SR160,160_ (1).jpg","rating":{"rate":4.7,"count":130}}]

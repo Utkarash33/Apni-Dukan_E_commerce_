@@ -38,7 +38,7 @@ btn.addEventListener("click",function()
                        alert("Sign in Successfully")
                        localStorage.setItem("User",JSON.stringify(LSdata[j]))
 
-                       window.location.href ="./home.html"
+                       window.location.href ="./index.html"
                      }
                      else
                      {
