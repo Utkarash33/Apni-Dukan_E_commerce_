@@ -1,13 +1,14 @@
 *
 {
     box-sizing: border-box;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 body
 {
     margin: 0%;
     padding: 0%;
-    background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-yellow-geometric-flattened-taobao-e-commerce-coupon-background-picture-image_1076077.jpg")
+    background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-yellow-geometric-flattened-taobao-e-commerce-coupon-background-picture-image_1076077.jpg");
+    backdrop-filter: blur(5px);
 }
 a{
     text-decoration: none;
