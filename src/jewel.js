@@ -40,6 +40,7 @@ clothing.addEventListener("click",()=>{
 
 
 let cart_count = document.getElementById("product_count")
+cart_count.innerText = JSON.parse(localStorage.getItem("cartCount"))
 let user = JSON.parse(localStorage.getItem("User"))||[]
 //  let Guest = [...user]
     signin_btna.addEventListener("click",()=>
@@ -172,24 +173,9 @@ let fatchData =[];
      add.innerText = "Show Know"
 
      add.addEventListener("click",function()
-     {let flag = true;
-        for(let i=0;i<LSdata.length;i++)
-        {
-            if(LSdata[i].id==elm.id)
-            {
-                flag = false;
-                break;
-            }
-        }
-       if(flag == true)
-       {
-        LSdata.push(elm)
-       localStorage.setItem("mobiles",JSON.stringify(LSdata))
-       }
-       else
-       {
-        alert("product already added to the cart")
-       }
+     { let x = elm
+      localStorage.setItem("product",JSON.stringify(x))
+      window.location.href ="./singleproduct.html"
      })
      
     product.append(img,title,sign,price,rating,add)

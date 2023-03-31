@@ -40,6 +40,7 @@ btn.addEventListener("click",function()
                     alert("Account Created successfully");
                     window.location.href="./signin.html"
                     
+                    
                  }
                  else
                  {
