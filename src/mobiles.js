@@ -114,7 +114,8 @@ if(user.length==1)
     let container = document.getElementById("container");
     // let filter = document.getElementById("filter")
   let response =  fetch("./API3.js");
-  let LSdata = JSON.parse(localStorage.getItem("mobiles"))||[]
+  cart_count.innerText = JSON.parse(localStorage.getItem("cartCount"))
+  // let LSdata = JSON.parse(localStorage.getItem("mobiles"))||[]
 let fatchData =[];
   response.then((res)=>{
      return res.json()
@@ -125,51 +126,10 @@ let fatchData =[];
   }).catch((error)=>{
     console.log(error)
   })
-
-//   filter.addEventListener("change",function()
-//     {
-    //     if(filter.value==="")
-    //     {
-    //         display(fatchData)
-    //     }else{
-    //         let filtered =  fatchData.filter(function(elm)
-    //     {
-    //           if(elm.category === filter.value)
-    //           {
-    //             return true;
-    //           }
-    //           else{
-    //             return false;
-    //           }
-    //     })
-    //   display(filtered)
-    //     }
-     
-    // })
-    // sort.addEventListener("change",function()
-    // {
-    //   if(sort.value==="")
-    //   {
-    //     display(fatchData)
-    //   }else if(sort.value === "Low to High")
-    //   {
-    //    fatchData = fatchData.sort((a,b)=>{
-    //       return a.price-b.price
-    //     })
-        
-    //   }
-    //   else if(sort.value=== "High to Low")
-    //     {
-    //       fatchData.sort((a,b)=>{
-    //         return b.price - a.price
-    //       })
-    //     }
-    //     display(fatchData)
-    // })
   function display(data)
   {
     container.innerText = ""
- data.forEach(function(elm) {
+ data.forEach(function(elm,index) {
     let product= document.createElement("div")
     let img = document.createElement("img")
     let title = document.createElement("h2")
@@ -187,26 +147,12 @@ let fatchData =[];
      sign.innerText ="$"
      price.innerText = elm.price;
      add.innerText = "Show Know"
-
+  
      add.addEventListener("click",function()
-     {let flag = true;
-        for(let i=0;i<LSdata.length;i++)
-        {
-            if(LSdata[i].id==elm.id)
-            {
-                flag = false;
-                break;
-            }
-        }
-       if(flag == true)
-       {
-        LSdata.push(elm)
-       localStorage.setItem("mobiles",JSON.stringify(LSdata))
-       }
-       else
-       {
-        alert("product already added to the cart")
-       }
+     {
+       let x = elm
+       localStorage.setItem("product",JSON.stringify(x))
+       window.location.href ="./singleproduct.html"
      })
      
     product.append(img,title,sign,price,rating,add)

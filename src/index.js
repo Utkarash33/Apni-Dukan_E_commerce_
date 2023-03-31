@@ -33,6 +33,8 @@ if(user.length==1)
    signin_text.innerText = "Hello," +" "+user[0].name;
    signin_btna.innerText = "Sign out"
 }
+
+cart_count.innerText = JSON.parse(localStorage.getItem("cartCount"))
 let slide = document.getElementById("slide")
    let img = document.querySelector("#slide>img")
    
@@ -53,7 +55,7 @@ let x =0
       {
         i=0
       }
-     },4000)
+     },3000)
  })
 
 

@@ -32,7 +32,7 @@ if(user.length==1)
    signin_text.innerText = "Hello," +" "+user[0].name;
    signin_btna.innerText = "Sign out"
 }
- 
+cart_count.innerText = JSON.parse(localStorage.getItem("cartCount")) 
 let mobile = document.getElementById("mobile")
 let clothing = document.getElementById("cloth")
 let jewel = document.getElementById("jewel")
@@ -59,7 +59,7 @@ clothing.addEventListener("click",()=>{
 logo.addEventListener("click",()=>
 {
  
-  window.location.href ="./home.html"
+  window.location.href ="./index.html"
 })
 search_btn.addEventListener("click",function()
 {
@@ -183,24 +183,9 @@ let fatchData =[];
      add.innerText = "Show Know"
 
      add.addEventListener("click",function()
-     {let flag = true;
-        for(let i=0;i<LSdata.length;i++)
-        {
-            if(LSdata[i].id==elm.id)
-            {
-                flag = false;
-                break;
-            }
-        }
-       if(flag == true)
-       {
-        LSdata.push(elm)
-       localStorage.setItem("masai_ecomm",JSON.stringify(LSdata))
-       }
-       else
-       {
-        alert("product already added to the cart")
-       }
+     { let x = elm
+      localStorage.setItem("product",JSON.stringify(x))
+      window.location.href ="./singleproduct.html"
      })
      
     product.append(img,title,sign,price,rating,add)
