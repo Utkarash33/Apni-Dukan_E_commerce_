@@ -16,6 +16,7 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
        { 
         localStorage.removeItem("User")
         user=[]
+        localStorage.removeItem("cartCount")
         // display(Guest)
         signin_btna.innerText = "Sign In"
         signin_text.innerText ="Hello Guest"
@@ -37,7 +38,18 @@ if(user.length==1)
    signin_btna.innerText = "Sign out"
 }
 
-
+cart.addEventListener("click",()=>
+    { 
+      if(signin_btna.innerText=="Sign out")
+      {
+         window.location.href="./cart.html"
+      }
+      else
+      {
+         window.location.href="./signin.html"
+      }
+      
+    })
 // Middle section////////////////////////////////////////////
 
 
@@ -62,6 +74,7 @@ cartbtn.addEventListener("click",()=>
     LSdata.quantity =flt.value 
    card.push(LSdata)
    localStorage.setItem("cart",JSON.stringify(card))
+   alert("Product added to the cart")
   }
   else
   { let flag= true
@@ -77,6 +90,7 @@ cartbtn.addEventListener("click",()=>
   {
     card.push(LSdata)
     localStorage.setItem("cart",JSON.stringify(card))
+    alert("Product added to the cart")
   }
   else{
    alert("Item already in cart")

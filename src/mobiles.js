@@ -64,6 +64,7 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
        { 
         localStorage.removeItem("User")
         user=[]
+        localStorage.removeItem("cartCount")
         // display(Guest)
         signin_btna.innerText = "Sign In"
         signin_text.innerText ="Hello Guest"
@@ -83,15 +84,25 @@ if(user.length==1)
    signin_btna.innerText = "Sign out"
 }
  
+cart.addEventListener("click",()=>
+    { 
+      if(signin_btna.innerText=="Sign out")
+      {
+         window.location.href="./cart.html"
+      }
+      else
+      {
+         window.location.href="./signin.html"
+      }
+      
+    })
+ 
+ 
+let sortbtn = document.getElementById("selectbtn")
  
  
  
- 
- 
- 
- 
- 
- 
+
  
  
  
@@ -128,8 +139,38 @@ let fatchData =[];
   })
   function display(data)
   {
+
     container.innerText = ""
+    sortbtn.addEventListener("change",()=>
+    { let igi =[...data]
+    if(sortbtn.value=="lth")
+    {
+      igi= igi.sort((a,b)=>
+     
+     {
+       return a.price -  b.price
+     })
+     display(igi)
+     console.log(data)
+    }
+    else if(sortbtn.value=="htl")
+    {
+      igi= igi.sort((a,b)=>
+     
+      {
+        return b.price - a.price
+      })
+      display(igi)
+     
+    }
+
+  })
+
  data.forEach(function(elm,index) {
+
+
+ 
+
     let product= document.createElement("div")
     let img = document.createElement("img")
     let title = document.createElement("h2")
@@ -156,6 +197,12 @@ let fatchData =[];
      })
      
     product.append(img,title,sign,price,rating,add)
+   product.addEventListener("click",()=>
+    {
+      let x = elm
+       localStorage.setItem("product",JSON.stringify(x))
+       window.location.href ="./singleproduct.html"
+    })
     container.append(product)
  });
   }

@@ -36,7 +36,18 @@ clothing.addEventListener("click",()=>{
   window.location.href ="./index.html"
 })
 
-
+cart.addEventListener("click",()=>
+    { 
+      if(signin_btna.innerText=="Sign out")
+      {
+         window.location.href="./cart.html"
+      }
+      else
+      {
+         window.location.href="./signin.html"
+      }
+      
+    })
 
 
 let cart_count = document.getElementById("product_count")
@@ -49,6 +60,7 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
        { 
         localStorage.removeItem("User")
         user=[]
+        localStorage.removeItem("cartCount")
         // display(Guest)
         signin_btna.innerText = "Sign In"
         signin_text.innerText ="Hello Guest"
@@ -95,7 +107,7 @@ if(user.length==1)
  
  
  
-//  let sort = document.getElementById("Sort")
+let sortbtn = document.getElementById("selectbtn")
     let container = document.getElementById("container");
   let response =  fetch("https://mocki.io/v1/a68534c2-bdbd-4487-b0e8-5e9aea69ed78");
   let LSdata = JSON.parse(localStorage.getItem("mobiles"))||[]
@@ -118,7 +130,7 @@ let fatchData =[];
         }else{
             let filtered =  fatchData.filter(function(elm)
         {
-              if((elm.category).toUpperCase().includes(input.value.toUpperCase()))
+              if((elm.title).toUpperCase().includes(input.value.toUpperCase()))
               {
                 return true;
               }
@@ -130,26 +142,26 @@ let fatchData =[];
         }
      
     })
-    // sort.addEventListener("change",function()
-    // {
-    //   if(sort.value==="")
-    //   {
-    //     display(fatchData)
-    //   }else if(sort.value === "Low to High")
-    //   {
-    //    fatchData = fatchData.sort((a,b)=>{
-    //       return a.price-b.price
-    //     })
+    sortbtn.addEventListener("change",function()
+    {
+      if(sortbtn.value==="")
+      {
+        display(fatchData)
+      }else if(sortbtn.value === "lth")
+      {
+       fatchData = fatchData.sort((a,b)=>{
+          return a.price-b.price
+        })
         
-    //   }
-    //   else if(sort.value=== "High to Low")
-    //     {
-    //       fatchData.sort((a,b)=>{
-    //         return b.price - a.price
-    //       })
-    //     }
-    //     display(fatchData)
-    // })
+      }
+      else if(sortbtn.value=== "htl")
+        {
+          fatchData.sort((a,b)=>{
+            return b.price - a.price
+          })
+        }
+        display(fatchData)
+    })
   function display(data)
   {
     container.innerText = ""
@@ -179,6 +191,12 @@ let fatchData =[];
      })
      
     product.append(img,title,sign,price,rating,add)
+    product.addEventListener("click",()=>
+    {
+      let x = elm
+       localStorage.setItem("product",JSON.stringify(x))
+       window.location.href ="./singleproduct.html"
+    })
     container.append(product)
  });
   }

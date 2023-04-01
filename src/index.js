@@ -14,6 +14,7 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
         if(signin_btna.innerText == "Sign out")
        { 
         localStorage.removeItem("User")
+        localStorage.removeItem("cartCount")
         user=[]
         // display(Guest)
         signin_btna.innerText = "Sign In"
@@ -24,6 +25,19 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
     window.location.href="./signin.html"
      }
     })
+    cart.addEventListener("click",()=>
+    { 
+      if(signin_btna.innerText=="Sign out")
+      {
+         window.location.href="./cart.html"
+      }
+      else
+      {
+         window.location.href="./signin.html"
+      }
+      
+    })
+
 
 
  user =[]
@@ -93,5 +107,22 @@ clothing.addEventListener("click",()=>{
 
 
 
+
+   let mobiles = document.getElementById("mobile_top")
+   mobiles.addEventListener("click",()=>
+   {
+      window.location.href = "./mobiles.html"
+   })
+   let mobileimg = document.getElementById("mobiles")
+  
+   mobileimg.addEventListener("click",()=>
+   {
+      window.location.href = "./mobiles.html"
+   })
+   let clothimg = document.getElementById("cloths")
+   clothimg.addEventListener("click",()=>
+   {
+      window.location.href = "./sections.html"
+   })
 
    
