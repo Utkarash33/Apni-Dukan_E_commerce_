@@ -254,33 +254,16 @@ color: #007185;
     margin-right: 20px;
 } */
 
-
+/* 
 #pages
 {
     display: flex;
     justify-content: space-around;
+    border: 2px solid;
     
 }
-#card
-{
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 20px;
-    margin:20px;
-    border-radius: 7px;
-}
-#first
-{
-    margin:20px;
-}
-#second
-{
-    border: 2px solid;
-}
-#second h1
-{
-    display: inline;
-}
+
+
 
 #container
 {   
@@ -290,24 +273,76 @@ color: #007185;
 }
 
 
-#container img
-{
-   width: 100%;
-   height: 300px;
-}
+
 #card h1
 {
    font-size: 21px;
    font-weight: 400;
    line-height: 31px;
+} */
+#pages
+{
+    display: grid;
+    grid-template-columns: 70% 28.5%;
+    padding: 35px 25px;
+    gap: 25px;
+}
+#text
+{
+    display: flex;
+    justify-content: space-between;
+}
+#subtotal
+{
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 
 
 
 
-
-
+#container img
+{
+   width: 100%;
+}
+#container
+{
+    padding: 20px 15px 20px 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#card
+{
+    display: grid;
+    grid-template-columns: 10% 60% 10%;
+    justify-content: space-between;
+     padding: 20px; 
+    border-radius: 7px;
+}
+#second
+{
+    line-height:30px;
+    
+}
+#hr
+{
+    margin: 15px auto;
+}
+#third
+{
+    
+    text-align: right;
+    font-size: large;
+    font-weight: 600;
+}
+#delbtn
+{
+    display: block;
+    text-decoration: underline;
+    color:blue;
+}
 
 
 #paymentfirst
@@ -354,6 +389,4 @@ color: #007185;
    margin-top: 70px;
    padding: 20px 0px 40px 0px;
    border-radius: 7px;
-   
-  
 }

@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+  background: linear-gradient(rgb(255, 165, 129), rgb(180, 23, 248));
+}
+
+.uk_payment_div {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(254, 254, 254);
+  margin: auto;
+  margin-top: 10%;
+  background: linear-gradient(rgb(255, 180, 180), rgb(213, 127, 213));
+  box-shadow: rgba(220, 99, 176, 0.4) 5px 5px, rgba(248, 135, 206, 0.3) 10px 10px,
+    rgba(231, 102, 183, 0.2) 15px 15px, rgba(253, 195, 189, 0.1) 20px 20px,
+    rgba(224, 93, 176, 0.05) 25px 25px;
+display: grid;
+justify-content: center;
+align-items: center;
+text-align: center;
+grid-template-columns: 1fr;
+/* gap: 20px; */
+
+}
+
+.uk_tick
+{
+    margin-top: 35px;
+    margin-bottom: -100px;
+}
+
+.uk_tick i {
+  font-size: 130px;
+  background: linear-gradient(rgb(5, 5, 226), rgb(180, 23, 248));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+    
+}
+

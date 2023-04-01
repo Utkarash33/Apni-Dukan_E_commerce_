@@ -15,6 +15,7 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
         localStorage.removeItem("User")
         user=[]
         // display(Guest)
+        localStorage.removeItem("cartCount")
         signin_btna.innerText = "Sign In"
         signin_text.innerText ="Hello Guest"
     }
@@ -22,6 +23,18 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
      {
     window.location.href="./signin.html"
      }
+    })
+    cart.addEventListener("click",()=>
+    { 
+      if(signin_btna.innerText=="Sign out")
+      {
+         window.location.href="./cart.html"
+      }
+      else
+      {
+         window.location.href="./signin.html"
+      }
+      
     })
 
 
@@ -85,7 +98,7 @@ search_btn.addEventListener("click",function()
  
  
  
- 
+let sortbtn = document.getElementById("selectbtn")
  
  
  
@@ -105,9 +118,9 @@ search_btn.addEventListener("click",function()
  
  
  
-//  let sort = document.getElementById("Sort")
+
     let container = document.getElementById("container");
-    // let filter = document.getElementById("filter")
+   
   let response =  fetch("./API.js");
   let LSdata = JSON.parse(localStorage.getItem("masai_ecomm"))||[]
 let fatchData =[];
@@ -120,49 +133,44 @@ let fatchData =[];
   }).catch((error)=>{
     console.log(error)
   })
-//   filter.addEventListener("change",function()
-//     {
-    //     if(filter.value==="")
-    //     {
-    //         display(fatchData)
-    //     }else{
-    //         let filtered =  fatchData.filter(function(elm)
-    //     {
-    //           if(elm.category === filter.value)
-    //           {
-    //             return true;
-    //           }
-    //           else{
-    //             return false;
-    //           }
-    //     })
-    //   display(filtered)
-    //     }
-     
-    // })
-    // sort.addEventListener("change",function()
-    // {
-    //   if(sort.value==="")
-    //   {
-    //     display(fatchData)
-    //   }else if(sort.value === "Low to High")
-    //   {
-    //    fatchData = fatchData.sort((a,b)=>{
-    //       return a.price-b.price
-    //     })
-        
-    //   }
-    //   else if(sort.value=== "High to Low")
-    //     {
-    //       fatchData.sort((a,b)=>{
-    //         return b.price - a.price
-    //       })
-    //     }
-    //     display(fatchData)
-    // })
   function display(data)
   {
     container.innerText = ""
+    sortbtn.addEventListener("change",()=>
+    { let igi =[...data]
+    if(sortbtn.value=="lth")
+    {
+      igi= igi.sort((a,b)=>
+     
+     {
+       return a.price -  b.price
+     })
+     display(igi)
+     console.log(data)
+    }
+    else if(sortbtn.value=="htl")
+    {
+      igi= igi.sort((a,b)=>
+     
+      {
+        return b.price - a.price
+      })
+      display(igi)
+     
+    }
+  })
+
+
+
+
+
+
+
+
+
+
+
+
  data.forEach(function(elm) {
     let product= document.createElement("div")
     let img = document.createElement("img")
@@ -189,6 +197,12 @@ let fatchData =[];
      })
      
     product.append(img,title,sign,price,rating,add)
+    product.addEventListener("click",()=>
+    {
+      let x = elm
+       localStorage.setItem("product",JSON.stringify(x))
+       window.location.href ="./singleproduct.html"
+    })
     container.append(product)
  });
   }
