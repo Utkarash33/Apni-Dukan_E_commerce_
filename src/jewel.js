@@ -52,35 +52,31 @@ cart.addEventListener("click",()=>
 
 let cart_count = document.getElementById("product_count")
 cart_count.innerText = JSON.parse(localStorage.getItem("cartCount"))
-let user = JSON.parse(localStorage.getItem("User"))||[]
-//  let Guest = [...user]
-    signin_btna.addEventListener("click",()=>
-    { 
-        if(signin_btna.innerText == "Sign out")
-       { 
-        localStorage.removeItem("User")
-        user=[]
-        localStorage.removeItem("cartCount")
-        // display(Guest)
-        signin_btna.innerText = "Sign In"
-        signin_text.innerText ="Hello Guest"
-    }
-     else if(signin_btna.innerText=="Sign In")
-     {
-    window.location.href="./signin.html"
-     }
-    })
 
-
- user =[]
-user.push(JSON.parse(localStorage.getItem("User")))
-if(user.length==1)
+let user= []
+user.push( JSON.parse(localStorage.getItem("User")))
+if(user[0]!=null)
 {
    signin_text.innerText = "Hello," +" "+user[0].name;
    signin_btna.innerText = "Sign out"
 }
- 
- 
+
+    signin_btna.addEventListener("click",()=>
+     { 
+         if(signin_btna.innerText == "Sign out")
+        { 
+         localStorage.removeItem("User")
+         localStorage.removeItem("cartCount")
+         user=[]
+         // display(Guest)
+         signin_btna.innerText = "Sign In"
+         signin_text.innerText ="Hello Guest"
+     }
+      else if(signin_btna.innerText=="Sign In")
+      {
+     window.location.href="./signin.html"
+      }
+     })
  
  
  

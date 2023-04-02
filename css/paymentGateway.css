@@ -91,15 +91,7 @@ h2 {
     left: 47%;
     width: 100px;
 }
-body{
-    /* background: ; */
-}
 
-.uk_gateway_container
-{
-    /* background-color:e5e5e5 ; */
-
-}
 @media all and (max-width:900px)
 {
   .uk_gateway_container {

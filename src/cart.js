@@ -3,6 +3,8 @@ let signin_text= document.querySelector("#signin>p")
 let signin_btna= document.querySelector("#signin>a")
 let order = document.getElementById("order")
 let cart = document.getElementById("cart")
+let all= document.getElementById("all")
+let LSdata = JSON.parse(localStorage.getItem("cart"))||[]
     logo.addEventListener("click",()=>
 { 
   window.location.href ="./index.html"
@@ -17,10 +19,13 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
         localStorage.removeItem("User")
         user=[]
         // display(Guest)
-        window.location.href="./signin.html"
+        localStorage.removeItem("cart")
+        LSdata=[]
+       
         localStorage.removeItem("cartCount")
         signin_btna.innerText = "Sign In"
         signin_text.innerText ="Hello Guest"
+        window.location.href="./signin.html"
     }
      else if(signin_btna.innerText=="Sign In")
      {
@@ -42,13 +47,20 @@ if(user.length==1)
 
 // middle section/////////////////////////////////////////////////////////
 // 
+
+all.addEventListener("click",()=>
+   {
+       localStorage.removeItem("cart")
+       LSdata=[]
+       location.reload()
+   })
  let subtotal = document.getElementById("subtotal")
 let text = document.querySelector("#text>h1")
 let container = document.getElementById("container")
 let containerd = document.getElementById("conatinerd")
 let count = JSON.parse(localStorage.getItem("cartCount"))
 
-let LSdata = JSON.parse(localStorage.getItem("cart"))||[]
+
 
 if(LSdata.length==0)
 {

@@ -6,16 +6,24 @@ let signin_btna= document.querySelector("#signin>a")
 let order = document.getElementById("order")
 let cart = document.getElementById("cart")
 let cart_count = document.getElementById("product_count")
-let user = JSON.parse(localStorage.getItem("User"))||[]
-//  let Guest = [...user]
-    signin_btna.addEventListener("click",()=>
+
+let user= []
+user.push( JSON.parse(localStorage.getItem("User")))
+console.log(user[0])
+if(user[0]!=null)
+{
+   signin_text.innerText = "Hello," +" "+user[0].name;
+   signin_btna.innerText = "Sign out"
+}
+
+   signin_btna.addEventListener("click",()=>
     { 
         if(signin_btna.innerText == "Sign out")
        { 
         localStorage.removeItem("User")
+        localStorage.removeItem("cartCount")
         user=[]
         // display(Guest)
-        localStorage.removeItem("cartCount")
         signin_btna.innerText = "Sign In"
         signin_text.innerText ="Hello Guest"
     }
@@ -24,27 +32,7 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
     window.location.href="./signin.html"
      }
     })
-    cart.addEventListener("click",()=>
-    { 
-      if(signin_btna.innerText=="Sign out")
-      {
-         window.location.href="./cart.html"
-      }
-      else
-      {
-         window.location.href="./signin.html"
-      }
-      
-    })
 
-
- user =[]
-user.push(JSON.parse(localStorage.getItem("User")))
-if(user.length==1)
-{
-   signin_text.innerText = "Hello," +" "+user[0].name;
-   signin_btna.innerText = "Sign out"
-}
 cart_count.innerText = JSON.parse(localStorage.getItem("cartCount")) 
 let mobile = document.getElementById("mobile")
 let clothing = document.getElementById("cloth")

@@ -8,15 +8,22 @@ let cart = document.getElementById("cart")
   window.location.href ="./index.html"
 })
 let cart_count = document.getElementById("product_count")
-let user = JSON.parse(localStorage.getItem("User"))||[]
-//  let Guest = [...user]
-    signin_btna.addEventListener("click",()=>
+
+let user= []
+user.push( JSON.parse(localStorage.getItem("User")))
+if(user[0]!=null)
+{
+   signin_text.innerText = "Hello," +" "+user[0].name;
+   signin_btna.innerText = "Sign out"
+}
+
+   signin_btna.addEventListener("click",()=>
     { 
         if(signin_btna.innerText == "Sign out")
        { 
         localStorage.removeItem("User")
-        user=[]
         localStorage.removeItem("cartCount")
+        user=[]
         // display(Guest)
         signin_btna.innerText = "Sign In"
         signin_text.innerText ="Hello Guest"
@@ -25,18 +32,8 @@ let user = JSON.parse(localStorage.getItem("User"))||[]
      {
     window.location.href="./signin.html"
      }
-     
     })
-    
 
-
- user =[]
-user.push(JSON.parse(localStorage.getItem("User")))
-if(user.length==1)
-{
-   signin_text.innerText = "Hello," +" "+user[0].name;
-   signin_btna.innerText = "Sign out"
-}
 
 cart.addEventListener("click",()=>
     { 
